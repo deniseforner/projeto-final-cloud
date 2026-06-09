@@ -1,0 +1,20 @@
+# Terraform
+*.tfstate*
+*.tfstate.*
+.terraform/
+*.pem
+
+# Environment
+.env
+
+# Java / Maven
+target/
+*.class
+
+# Docker
+*.pem
+
+# IDE
+.vscode/
+.idea/
+*.iml
