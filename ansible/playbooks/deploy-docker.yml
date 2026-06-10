@@ -1,0 +1,6 @@
+---
+- name: Configure Docker on EC2
+  hosts: web_servers
+  become: yes
+  roles:
+    - docker
