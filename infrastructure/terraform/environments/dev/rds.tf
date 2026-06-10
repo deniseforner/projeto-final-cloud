@@ -2,8 +2,8 @@
 
 # DB Subnet Group (private subnets)
 resource "aws_db_subnet_group" "main" {
-  name        = "week7-db-subnet-group"
-  subnet_ids  = [aws_subnet.private_1a.id, aws_subnet.private_1b.id]
+  name       = "week7-db-subnet-group"
+  subnet_ids = [aws_subnet.private_1a.id, aws_subnet.private_1b.id]
 
   tags = {
     Name = "week7-db-subnet-group"
@@ -20,7 +20,7 @@ resource "aws_security_group" "rds" {
     from_port       = 5432
     to_port         = 5432
     protocol        = "tcp"
-    security_groups = [aws_security_group.web_sg.id]  # Agora na mesma VPC!
+    security_groups = [aws_security_group.web_sg.id] # Agora na mesma VPC!
   }
 
   egress {
@@ -37,12 +37,12 @@ resource "aws_security_group" "rds" {
 
 # RDS Instance (PostgreSQL)
 resource "aws_db_instance" "main" {
-  identifier     = "week7-database"
-  engine         = "postgres"
-  engine_version = "17"
-  instance_class = "db.t3.micro"
+  identifier        = "week7-database"
+  engine            = "postgres"
+  engine_version    = "17"
+  instance_class    = "db.t3.micro"
   allocated_storage = 20
-  storage_type   = "gp3"
+  storage_type      = "gp3"
 
   db_name  = "week7db"
   username = "dbadmin"
